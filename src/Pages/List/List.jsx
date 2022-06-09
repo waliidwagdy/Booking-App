@@ -1,7 +1,14 @@
+import Header from "../../Components/Header/Header";
+import Navbar from "../../Components/Navbar/Navbar";
 import "./list.css";
 
 const List = () => {
-  return <div>List</div>;
+  return (
+    <div>
+      <Navbar />
+      <Header type="list" />
+    </div>
+  );
 };
 
 export default List;
