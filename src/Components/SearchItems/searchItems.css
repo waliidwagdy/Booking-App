@@ -1,0 +1,4 @@
+.searchItems {
+  display: flex;
+  flex-direction: column;
+}

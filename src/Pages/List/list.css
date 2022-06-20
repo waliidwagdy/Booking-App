@@ -1,0 +1,84 @@
+.listContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.listWrapper {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  gap: 20px;
+}
+.listSearch {
+  flex: 1;
+  background-color: #febb02;
+  padding: 10px 20px;
+  border-radius: 5px;
+  position: sticky;
+  top: 10px;
+  height: max-content;
+}
+.searchTitle {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.searchInputs {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+.searchInput {
+  width: 100%;
+  max-width: 100%;
+  padding: 8px 0px 8px 10px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+}
+.listResult {
+  flex: 3;
+}
+.searchInputDate {
+  background-color: white;
+  padding: 8px 0px;
+  position: relative;
+  cursor: pointer;
+}
+.searchInputDateText {
+  color: black;
+  margin-left: 10px;
+}
+.searchInputDateModal {
+  position: absolute;
+  top: 38px;
+  left: 0;
+}
+.searchInputOptions {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+.searchInputOptions p {
+  font-size: 12px;
+}
+.searchInputOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.searchInputOptionInput {
+  border: 1px solid #003580;
+  width: 60px;
+  padding: 5px 0 5px 5px;
+  border-radius: 5px;
+}
+.searchInputOptionsBtn {
+  background-color: #0071c2;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}

@@ -16,8 +16,10 @@ import HeaderListItem from "./HeaderListItem/HeaderListItem";
 import { format } from "date-fns";
 import OptionItem from "../OptionItem/OptionItem";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ type }) => {
+  const [search, setSearch] = useState("");
   const [openDate, setOpenDate] = useState(false);
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
@@ -32,10 +34,21 @@ const Header = ({ type }) => {
       key: "selection",
     },
   ]);
+  const navigate = useNavigate();
   const checkOptionVal = (value, key) => {
     setOptions({
       ...options,
       [key]: value,
+    });
+  };
+  const handleSearch = () => {
+    navigate("/hotels", {
+      state: {
+        ...options,
+        startDate: date[0].startDate,
+        endDate: date[0].endDate,
+        search,
+      },
     });
   };
   return (
@@ -69,6 +82,8 @@ const Header = ({ type }) => {
                   type="text"
                   placeholder="Where are you going?"
                   className="headerSearchInput"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
                 />
               </div>
               <div className="headerSearchItem">
@@ -120,7 +135,9 @@ const Header = ({ type }) => {
                 )}
               </div>
               <div className="headerSearchItem">
-                <button className="headerBtn">Search</button>
+                <button className="headerBtn" onClick={handleSearch}>
+                  Search
+                </button>
               </div>
             </div>
           </>
