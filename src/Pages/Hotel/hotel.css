@@ -26,6 +26,9 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.bookNow:hover {
+  background-color: #00518a;
+}
 
 .hotelTitle {
   font-size: 24px;
@@ -63,6 +66,9 @@
   object-fit: cover;
   cursor: pointer;
 }
+.hotelImg:hover {
+  filter: brightness(80%);
+}
 
 .hotelDetails {
   display: flex;
@@ -89,17 +95,17 @@
   gap: 20px;
 }
 
-.hotelDetailsPrice > h1 {
+.hotelDetailsPrice h1 {
   font-size: 18px;
   color: #555;
 }
-.hotelDetailsPrice > span {
+.hotelDetailsPrice span {
   font-size: 14px;
 }
-.hotelDetailsPrice > h2 {
+.hotelDetailsPrice h2 {
   font-weight: 300;
 }
-.hotelDetailsPrice > button {
+.hotelDetailsPrice button {
   border: none;
   padding: 10px 20px;
   background-color: #0071c2;
@@ -108,7 +114,9 @@
   cursor: pointer;
   border-radius: 5px;
 }
-
+.hotelDetailsPrice button:hover {
+  background-color: #00518a;
+}
 .slider {
   position: sticky;
   top: 0;

@@ -97,3 +97,6 @@
   cursor: pointer;
   border-radius: 5px;
 }
+.revBody button:hover{
+  background-color: #00518a;
+}
