@@ -1,17 +1,12 @@
 import SearchItem from "./SearchItem/SearchItem";
 import "./searchItems.css";
 
-const SearchItems = () => {
+const SearchItems = ({ data }) => {
   return (
     <div className="searchItems">
-      <SearchItem />
-      <SearchItem />
-      <SearchItem />
-      <SearchItem />
-      <SearchItem />
-      <SearchItem />
-      <SearchItem />
-      <SearchItem />
+      {data?.map((el) => (
+        <SearchItem item={el} key={el._id} />
+      ))}
     </div>
   );
 };

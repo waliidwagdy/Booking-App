@@ -13,9 +13,9 @@ const PropertyListItem = ({ imgSrc, imgAlt, title, properties }) => {
   );
 };
 PropertyListItem.propTypes = {
-  imgSrc: PropTyes.string.isRequired,
-  imgAlt: PropTyes.string.isRequired,
-  title: PropTyes.string.isRequired,
-  properties: PropTyes.string.isRequired,
+  imgSrc: PropTyes.string,
+  imgAlt: PropTyes.string,
+  title: PropTyes.string,
+  properties: PropTyes.number,
 };
 export default PropertyListItem;

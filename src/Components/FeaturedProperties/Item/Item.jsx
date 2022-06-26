@@ -18,11 +18,13 @@ const Item = ({
       </h3>
       <span className="fpCity">{city}</span>
       <span className="fpPrice">Starting from EGP {price}</span>
-      <div className="fpReview">
-        <div className="fpRating">{rating}</div>
-        <span className="fpRatingText">{ratingText}</span>
-        <span className="fpRatingReviews">{numOfReviews} reviews</span>
-      </div>
+      {rating && (
+        <div className="fpReview">
+          <div className="fpRating">{rating}</div>
+          <span className="fpRatingText">{ratingText}</span>
+          <span className="fpRatingReviews">{numOfReviews} reviews</span>
+        </div>
+      )}
     </div>
   );
 };
@@ -32,9 +34,9 @@ Item.propTypes = {
   title: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  rating: PropTypes.number.isRequired,
-  ratingText: PropTypes.string.isRequired,
-  numOfReviews: PropTypes.number.isRequired,
+  rating: PropTypes.number,
+  ratingText: PropTypes.string,
+  numOfReviews: PropTypes.number,
 };
 
 export default Item;

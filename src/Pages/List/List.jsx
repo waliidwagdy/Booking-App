@@ -8,16 +8,20 @@ import Navbar from "../../Components/Navbar/Navbar";
 import "./list.css";
 import { useLocation } from "react-router-dom";
 import SearchItems from "../../Components/SearchItems/SearchItems";
+import useFetch from "../../Hooks/useFetch";
 const List = () => {
   const location = useLocation();
   const state = location.state;
-  const [minPrice, setMinPrice] = useState(1);
-  const [maxPrice, setMaxPrice] = useState(1);
+  const [minPrice, setMinPrice] = useState(undefined);
+  const [maxPrice, setMaxPrice] = useState(undefined);
   const [adult, setAdult] = useState(state?.adult);
   const [children, setChildren] = useState(state?.children);
   const [search, setSearch] = useState(state?.search || "");
   const [room, setRoom] = useState(state?.room);
   const [openDate, setOpenDate] = useState(false);
+  const { data, loading, fetchData } = useFetch(
+    `/hotels?city=${search}&min=${minPrice || 0}&max=${maxPrice || 999}`
+  );
   const [date, setDate] = useState([
     {
       startDate: state?.startDate,
@@ -124,11 +128,13 @@ const List = () => {
                   </div>
                 </div>
               </div>
-              <button className="searchInputOptionsBtn">Search</button>
+              <button className="searchInputOptionsBtn" onClick={fetchData}>
+                Search
+              </button>
             </div>
           </div>
           <div className="listResult">
-            <SearchItems />
+            {loading ? "Loading" : <SearchItems data={data} />}
           </div>
         </div>
       </div>

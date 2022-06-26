@@ -1,13 +1,12 @@
 import "./navbar.css";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Navbar = () => {
-  const navigate = useNavigate();
   return (
     <div className="navbar">
       <div className="navContainer">
-        <span className="logo" onClick={() => navigate("/")}>
-          Booking
-        </span>
+        <Link style={{ color: "white", textDecoration: "none" }} to="/">
+          <span className="logo">Booking</span>
+        </Link>
         <div className="navItems">
           <button className="navButton">Register</button>
           <button className="navButton">Login</button>
