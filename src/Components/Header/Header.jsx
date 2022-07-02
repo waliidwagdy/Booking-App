@@ -17,8 +17,14 @@ import { format } from "date-fns";
 import OptionItem from "../OptionItem/OptionItem";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { SearchContext } from "../../Context/SearchContext";
+import { newSearch } from "../../Context/actionTypes";
+import { AuthContext } from "../../Context/AuthContext";
 
 const Header = ({ type }) => {
+  const { user } = useContext(AuthContext);
+  const { dispatch } = useContext(SearchContext);
   const [search, setSearch] = useState("");
   const [openDate, setOpenDate] = useState(false);
   const [openOptions, setOpenOptions] = useState(false);
@@ -42,6 +48,7 @@ const Header = ({ type }) => {
     });
   };
   const handleSearch = () => {
+    dispatch({ type: newSearch, payload: { search, date, options } });
     navigate("/hotels", {
       state: {
         ...options,
@@ -74,7 +81,7 @@ const Header = ({ type }) => {
               Get rewarded for your travels – unlock instant savings of 10% or
               more with a free Booking.com account
             </p>
-            <button className="headerBtn">Sign in / Register</button>
+            {!user && <button className="headerBtn">Sign in / Register</button>}
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
