@@ -4,7 +4,7 @@ import FeaturedItem from "./FeaturedItem/FeaturedItem";
 
 const Featured = () => {
   const { data, loading } = useFetch(
-    "/hotels/countByCity?cities=berlin,madrid,london"
+    "https://booking-api-backend.herokuapp.com/api/hotels/countByCity?cities=berlin,madrid,london"
   );
   return (
     <div className="featured">

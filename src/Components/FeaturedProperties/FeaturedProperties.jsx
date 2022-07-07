@@ -3,7 +3,9 @@ import "./featuredProperties.css";
 import Item from "./Item/Item";
 
 const FeaturedProperties = () => {
-  const { data, loading } = useFetch("/hotels?featured=true&limit=4");
+  const { data, loading } = useFetch(
+    "https://booking-api-backend.herokuapp.com/api/hotels?featured=true&limit=4"
+  );
   return (
     <div className="fp">
       {loading ? (

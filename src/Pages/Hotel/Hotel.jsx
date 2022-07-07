@@ -46,7 +46,9 @@ const Hotel = () => {
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const id = useParams().id;
-  const { data, laoding } = useFetch(`/hotels/findOne/${id}`);
+  const { data, laoding } = useFetch(
+    `https://booking-api-backend.herokuapp.com/api/hotels/findOne/${id}`
+  );
   const { date, options } = useContext(SearchContext);
   const days = dayDiff(date[0]?.endDate, date[0]?.startDate);
   const handleOpen = (i) => {

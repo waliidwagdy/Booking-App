@@ -14,7 +14,10 @@ const Login = () => {
     try {
       e.preventDefault();
       dispatch({ type: loginStart });
-      const response = await axios.post("/auth/login", { email, password });
+      const response = await axios.post(
+        "https://booking-api-backend.herokuapp.com/api/auth/login",
+        { email, password }
+      );
       dispatch({ type: loginSuccess, payload: response.data.details });
       navigate("/");
     } catch (e) {

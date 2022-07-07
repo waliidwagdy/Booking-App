@@ -20,7 +20,9 @@ const List = () => {
   const [room, setRoom] = useState(state?.room);
   const [openDate, setOpenDate] = useState(false);
   const { data, loading, fetchData } = useFetch(
-    `/hotels?city=${search}&min=${minPrice || 0}&max=${maxPrice || 999}`
+    `https://booking-api-backend.herokuapp.com/api/hotels?city=${search}&min=${
+      minPrice || 0
+    }&max=${maxPrice || 999}`
   );
   const [date, setDate] = useState([
     {

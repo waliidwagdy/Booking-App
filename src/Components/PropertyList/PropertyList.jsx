@@ -10,7 +10,9 @@ const photos = [
   "https://www.jasper.travel/media/images/IMG_3663-large_1.2e16d0ba.fill-1370x800.jpg",
 ];
 const PropertyList = () => {
-  const { data, loading } = useFetch("/hotels/countByType");
+  const { data, loading } = useFetch(
+    "https://booking-api-backend.herokuapp.com/api/hotels/countByType"
+  );
   return (
     <div className="pList">
       {loading ? (
